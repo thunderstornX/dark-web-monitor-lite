@@ -1,0 +1,34 @@
+{
+  "title": "dark-web-monitor-lite: A defensive Tor-aware keyword-watchlist monitor with rules-only matcher precision/recall measurement and a thorough compliance baseline",
+  "description": "A small Python tool for defensive cyber-threat-intelligence (CTI) teams that watches a configurable list of publicly-known onion-service URLs for matches against a target watchlist of fictitious-by-default keywords, then dispatches alerts via Slack, Discord, or generic webhook. The tool is intentionally Tor-aware via the stem and httpx-socks libraries but degrades gracefully when no Tor SOCKS proxy is reachable: every fetcher returns a typed FetchResult (ok, http_error, network_error, tor_unavailable, timeout) so an operator can see coverage gaps in the report itself. Real measurements are reported on the matcher engine only — a labelled keyword corpus of 60 entries gives reproducible offline precision/recall/F1 for both exact and rapidfuzz fuzzy modes. Live onion fetches are deliberately not in the eval. The repository ships an unusually thorough compliance baseline: a deployment policy template, a four-jurisdiction (US, UK, EU, Pakistan) legal review, and an extensive ETHICAL_USE statement.",
+  "creators": [
+    {
+      "name": "Bhutto, Ali Murtaza",
+      "orcid": "0009-0007-2787-943X",
+      "affiliation": "Independent Researcher"
+    }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "dark web",
+    "threat intelligence",
+    "Tor",
+    "monitoring",
+    "IOC",
+    "defensive security",
+    "keyword matching",
+    "compliance",
+    "rapidfuzz"
+  ],
+  "communities": [
+    {"identifier": "ai-safety"}
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/thunderstornX/dark-web-monitor-lite",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "upload_type": "software"
+}

@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software in academic work, please cite it as below."
+title: "dark-web-monitor-lite: A defensive Tor-aware keyword-watchlist monitor with rules-only matcher precision/recall measurement and a thorough compliance baseline"
+authors:
+  - family-names: "Bhutto"
+    given-names: "Ali Murtaza"
+    orcid: "https://orcid.org/0009-0007-2787-943X"
+    affiliation: "Independent Researcher"
+license: MIT
+type: software
+repository-code: "https://github.com/thunderstornX/dark-web-monitor-lite"
+keywords:
+  - "dark web"
+  - "threat intelligence"
+  - "Tor"
+  - "monitoring"
+  - "IOC"
+  - "defensive security"
+  - "keyword matching"
+  - "compliance"
+version: "0.1.0"
+date-released: "2026-05-06"
+doi: "10.5281/zenodo.XXXXXXX"

@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Virtualenvs
+.venv/
+venv/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Operator-side artefacts that should NEVER be committed.
+# Even synthetic captures of supposedly-public content can land us in
+# the wrong jurisdictional bucket; we keep all live captures off-tree.
+captures/
+*.har
+*.pcap
+
+# Generated reports
+report.json
+report.md
+scan-*.json
+
+# Security tooling
+bandit-report.json
+semgrep-report.json
+pip-audit-report.json
+
+# LaTeX intermediates
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/*.toc
+paper/*.dvi
+paper/*.synctex.gz
+paper/*.fls
+paper/*.fdb_latexmk
