@@ -1,0 +1,43 @@
+# Sources to fetch on each scan.
+#
+# Every source listed here MUST satisfy the four-part "publicly
+# accessible" definition in ETHICAL_USE.md. The shipped sample lists
+# placeholder onion URLs only — clearly-fake hostnames in the
+# `.example.onion` namespace that any local Tor daemon will refuse to
+# resolve. Replace with audited public-directory or public-search
+# sources before deployment, after running them through the policy
+# review in compliance/POLICY_TEMPLATE.md.
+
+sources:
+  - name: ahmia-search-placeholder
+    url: "http://placeholder-ahmia.example.onion/search/?q=acmecorp"
+    description: >-
+      Placeholder pointing at a fictional Ahmia-style public search
+      index. In a real deployment this would be the Ahmia v3 onion
+      address or its clearnet mirror. Replace before scanning.
+
+  - name: public-directory-placeholder
+    url: "http://placeholder-directory.example.onion/index.html"
+    description: >-
+      Placeholder for a publicly-published research / directory
+      page maintained by a recognised non-profit (the four-part
+      definition's bullet 1).
+
+  - name: public-paste-placeholder
+    url: "http://placeholder-paste.example.onion/recent.html"
+    description: >-
+      Placeholder for a publicly-readable paste site that does not
+      require account creation. Bullet 2 of the four-part
+      definition rules out anything behind an account gate.
+
+# A source's `pre_flight` block is consulted before each scan; the
+# parser refuses to load a source whose `requires_auth` is true.
+_global_pre_flight_rules:
+  requires_auth: false        # Sources requiring auth are auto-rejected
+  requires_payment: false     # Sources requiring payment are auto-rejected
+  requires_invitation: false  # Invitation-only sources are auto-rejected
+
+_storage_recommendation: |
+  This list is operational data; treat as 'internal'. Do not commit
+  your filled-in copy. The .gitignore protects the example
+  placeholders only.

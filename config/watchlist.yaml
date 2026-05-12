@@ -1,0 +1,48 @@
+# Watchlist of organisational identifiers to monitor.
+#
+# All entries below are FICTIONAL by design. AcmeCorp / ExampleInc /
+# FictionalCo are placeholders; loading this file in production is a
+# no-op until you replace these with your own organisational
+# identifiers. Personal-name watchlist entries are explicitly disallowed
+# (see _disallowed_categories below); the matcher refuses to load if
+# this block is missing.
+
+# Organisational brand identifiers. These should be the names a
+# threat-actor would actually use when discussing the org publicly.
+brands:
+  - AcmeCorp
+  - Acme Corp
+  - acmecorp.example
+  - ExampleInc
+  - Example Inc
+  - example-inc.example
+  - FictionalCo
+  - FCo
+
+# Internal codenames the org has flagged for monitoring.
+codenames:
+  - Project Aurora
+  - Aurora-Zenith
+  - "PRJ-AURORA"
+
+# IOC strings produced by the org's IR function.
+iocs:
+  - "acme-prod-secret-id"
+  - "fictional-token-prefix-"
+
+# Mandatory: list of categories this watchlist MUST NOT contain.
+# The parser refuses to load if this block is missing. This is the
+# policy backstop against ad-hoc personal-target additions.
+_disallowed_categories:
+  - personal_names
+  - residential_addresses
+  - government_or_military_aliases
+  - journalist_or_activist_identifiers
+  - lawyer_or_litigant_identifiers
+
+_storage_recommendation: |
+  This file lists organisational identifiers that, by themselves,
+  identify the deploying organisation. Treat it as 'internal'
+  classification at minimum. Do not commit your filled-in copy to
+  any version-control system, public or private; the .gitignore
+  in this repo only covers the example placeholders.
