@@ -1,0 +1,299 @@
+{
+  "_note": "Labelled corpus for the matcher eval. Each entry pairs a synthetic body with the set of watchlist keywords that SHOULD match. The eval treats every (body, keyword) cell as binary: did the matcher fire on it? expected to? The corpus deliberately mixes exact-match cases, near-miss cases that fuzzy should catch, and noise cases (bodies with no expected matches) so precision and recall are both measurable.",
+  "watchlist": [
+    "AcmeCorp",
+    "Acme Corp",
+    "ExampleInc",
+    "FictionalCo",
+    "Project Aurora",
+    "Aurora-Zenith",
+    "PRJ-AURORA",
+    "acme-prod-secret-id",
+    "fictional-token-prefix-",
+    "FCo"
+  ],
+  "samples": [
+    {
+      "id": "exact-01",
+      "body": "leak: AcmeCorp internal documents posted today.",
+      "expected": ["AcmeCorp"]
+    },
+    {
+      "id": "exact-02",
+      "body": "Multiple mentions of AcmeCorp and AcmeCorp again.",
+      "expected": ["AcmeCorp"]
+    },
+    {
+      "id": "exact-03",
+      "body": "ExampleInc claims breach; hash leak follows.",
+      "expected": ["ExampleInc"]
+    },
+    {
+      "id": "exact-04",
+      "body": "FictionalCo responded but the dump remains live.",
+      "expected": ["FictionalCo"]
+    },
+    {
+      "id": "exact-05",
+      "body": "Project Aurora source was leaked alongside FCo's repo.",
+      "expected": ["Project Aurora", "FCo"]
+    },
+    {
+      "id": "exact-06",
+      "body": "PRJ-AURORA tokens posted: acme-prod-secret-id=abc123",
+      "expected": ["PRJ-AURORA", "acme-prod-secret-id"]
+    },
+    {
+      "id": "exact-07",
+      "body": "Buyer wants Aurora-Zenith builds; no price floor yet.",
+      "expected": ["Aurora-Zenith"]
+    },
+    {
+      "id": "exact-08",
+      "body": "fictional-token-prefix-AAAA observed on paste site.",
+      "expected": ["fictional-token-prefix-"]
+    },
+    {
+      "id": "exact-09",
+      "body": "Acme Corp shareholder leak appears verified.",
+      "expected": ["Acme Corp", "AcmeCorp"]
+    },
+    {
+      "id": "exact-10",
+      "body": "Long thread: AcmeCorp / FictionalCo / ExampleInc all named.",
+      "expected": ["AcmeCorp", "FictionalCo", "ExampleInc"]
+    },
+
+    {
+      "id": "fuzzy-01",
+      "body": "leak attributed to AcmeCorps yesterday.",
+      "expected": ["AcmeCorp"]
+    },
+    {
+      "id": "fuzzy-02",
+      "body": "Buyer mentions Acme-Corp internal blueprints.",
+      "expected": ["AcmeCorp", "Acme Corp"]
+    },
+    {
+      "id": "fuzzy-03",
+      "body": "Forum thread references Project Aurorra (sic).",
+      "expected": ["Project Aurora"]
+    },
+    {
+      "id": "fuzzy-04",
+      "body": "Zenith Aurora dump dropped 4h ago.",
+      "expected": ["Aurora-Zenith"]
+    },
+    {
+      "id": "fuzzy-05",
+      "body": "Fictional Company assets cited in dump.",
+      "expected": ["FictionalCo"]
+    },
+    {
+      "id": "fuzzy-06",
+      "body": "Example Inc named in thread; cred dump follows.",
+      "expected": ["ExampleInc"]
+    },
+    {
+      "id": "fuzzy-07",
+      "body": "PRJ AURORA refresh leaked.",
+      "expected": ["PRJ-AURORA"]
+    },
+    {
+      "id": "fuzzy-08",
+      "body": "acme prod secret id lookup paste shared.",
+      "expected": ["acme-prod-secret-id"]
+    },
+    {
+      "id": "fuzzy-09",
+      "body": "fictional token prefix sequence posted.",
+      "expected": ["fictional-token-prefix-"]
+    },
+    {
+      "id": "fuzzy-10",
+      "body": "acmecorp.com phishing kit reposted.",
+      "expected": ["AcmeCorp"]
+    },
+
+    {
+      "id": "noise-01",
+      "body": "Reddit post about an unrelated company breach.",
+      "expected": []
+    },
+    {
+      "id": "noise-02",
+      "body": "Random forum cross-talk; no IOCs of interest here.",
+      "expected": []
+    },
+    {
+      "id": "noise-03",
+      "body": "We are not Acmesoft and never were Acmesoftware.",
+      "expected": []
+    },
+    {
+      "id": "noise-04",
+      "body": "A discussion of Aurora Borealis and Northern Lights.",
+      "expected": []
+    },
+    {
+      "id": "noise-05",
+      "body": "Generic dump claiming 1B records; vague provenance.",
+      "expected": []
+    },
+    {
+      "id": "noise-06",
+      "body": "Screenshots from MexampleCo (different company).",
+      "expected": []
+    },
+    {
+      "id": "noise-07",
+      "body": "The word Project alone appears, with no codename.",
+      "expected": []
+    },
+    {
+      "id": "noise-08",
+      "body": "FCC complaint mentions an unrelated brand.",
+      "expected": []
+    },
+    {
+      "id": "noise-09",
+      "body": "Tor exit-node operator post about bandwidth.",
+      "expected": []
+    },
+    {
+      "id": "noise-10",
+      "body": "Index page; nothing to scrape; no mentions of any kind.",
+      "expected": []
+    },
+
+    {
+      "id": "tricky-01",
+      "body": "The name Acmef appears alone; no other context.",
+      "expected": []
+    },
+    {
+      "id": "tricky-02",
+      "body": "PRJ-Auror without the final A — typo, not our codename.",
+      "expected": []
+    },
+    {
+      "id": "tricky-03",
+      "body": "AAAcmeCorpAAA flooded the channel as a spam test.",
+      "expected": ["AcmeCorp"]
+    },
+    {
+      "id": "tricky-04",
+      "body": "FCO (UK Foreign and Commonwealth Office) press release.",
+      "expected": []
+    },
+    {
+      "id": "tricky-05",
+      "body": "The phrase 'fictional-token' alone — not the prefix.",
+      "expected": []
+    },
+    {
+      "id": "tricky-06",
+      "body": "Project named Auroras (different project).",
+      "expected": []
+    },
+    {
+      "id": "tricky-07",
+      "body": "Ex@mpleInc with at-sign substitution.",
+      "expected": ["ExampleInc"]
+    },
+    {
+      "id": "tricky-08",
+      "body": "ACME CORP (uppercase) reposting tonight.",
+      "expected": ["AcmeCorp", "Acme Corp"]
+    },
+    {
+      "id": "tricky-09",
+      "body": "Zenith without Aurora — different project.",
+      "expected": []
+    },
+    {
+      "id": "tricky-10",
+      "body": "The string FCo[1] appears alongside other footnotes.",
+      "expected": ["FCo"]
+    },
+
+    {
+      "id": "long-01",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. AcmeCorp credentials reportedly posted. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Continued discussion follows.",
+      "expected": ["AcmeCorp"]
+    },
+    {
+      "id": "long-02",
+      "body": "Long unrelated post: today the weather is fine. The market is up. There is no IOC mention here. None whatsoever. Continue scrolling. Still nothing. End of post.",
+      "expected": []
+    },
+    {
+      "id": "long-03",
+      "body": "Mixed bag: Project Aurora and FictionalCo are both named in the same thread; the rest of the body is unrelated chatter about cryptocurrency markets and exchange listings.",
+      "expected": ["Project Aurora", "FictionalCo"]
+    },
+    {
+      "id": "long-04",
+      "body": "Pure noise body with technical terms: SHA-256, PGP, OpenSSL, Tor, Onion, mesh networking, no organisational identifiers at all.",
+      "expected": []
+    },
+    {
+      "id": "long-05",
+      "body": "ExampleInc disclosure thread; multiple paragraphs but only the first few sentences carry the brand name. Subsequent paragraphs are unrelated to ExampleInc and discuss general cybersecurity news.",
+      "expected": ["ExampleInc"]
+    },
+
+    {
+      "id": "negation-01",
+      "body": "Is this AcmeCorp? No, it is not — different brand entirely.",
+      "expected": ["AcmeCorp"]
+    },
+    {
+      "id": "negation-02",
+      "body": "Not associated with FictionalCo in any way.",
+      "expected": ["FictionalCo"]
+    },
+
+    {
+      "id": "url-01",
+      "body": "https://acmecorp.example/leaked-dump.tar.gz",
+      "expected": ["AcmeCorp"]
+    },
+    {
+      "id": "url-02",
+      "body": "https://example-inc.example/contact",
+      "expected": ["ExampleInc"]
+    },
+    {
+      "id": "url-03",
+      "body": "Posted to https://unrelated.example/path/to/thing.html",
+      "expected": []
+    },
+    {
+      "id": "url-04",
+      "body": "We are NOT acmecorp.example - this is a phishing clone.",
+      "expected": ["AcmeCorp"]
+    },
+    {
+      "id": "url-05",
+      "body": "See https://other-company.example/ for unrelated info.",
+      "expected": []
+    },
+
+    {
+      "id": "bilingual-01",
+      "body": "Spanish post: AcmeCorp ha sido pirateada esta noche.",
+      "expected": ["AcmeCorp"]
+    },
+    {
+      "id": "bilingual-02",
+      "body": "French post: ExampleInc subit une fuite ce soir.",
+      "expected": ["ExampleInc"]
+    },
+    {
+      "id": "bilingual-03",
+      "body": "Fully Spanish post about an unrelated company breach.",
+      "expected": []
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "exact_only": {
+    "accuracy": 0.9745,
+    "f1": 0.8056,
+    "fn": 13,
+    "fp": 1,
+    "precision": 0.9667,
+    "recall": 0.6905,
+    "tn": 507,
+    "tp": 29,
+    "universe": 550
+  },
+  "fp_fn_detail": {
+    "exact_only": {
+      "fn": [
+        [
+          "exact-09",
+          "AcmeCorp"
+        ],
+        [
+          "fuzzy-02",
+          "AcmeCorp"
+        ],
+        [
+          "fuzzy-02",
+          "Acme Corp"
+        ],
+        [
+          "fuzzy-03",
+          "Project Aurora"
+        ],
+        [
+          "fuzzy-04",
+          "Aurora-Zenith"
+        ],
+        [
+          "fuzzy-05",
+          "FictionalCo"
+        ],
+        [
+          "fuzzy-06",
+          "ExampleInc"
+        ],
+        [
+          "fuzzy-07",
+          "PRJ-AURORA"
+        ],
+        [
+          "fuzzy-08",
+          "acme-prod-secret-id"
+        ],
+        [
+          "fuzzy-09",
+          "fictional-token-prefix-"
+        ],
+        [
+          "tricky-07",
+          "ExampleInc"
+        ],
+        [
+          "tricky-08",
+          "AcmeCorp"
+        ],
+        [
+          "url-02",
+          "ExampleInc"
+        ]
+      ],
+      "fp": [
+        [
+          "tricky-04",
+          "FCo"
+        ]
+      ]
+    },
+    "fuzzy_on": {
+      "fn": [
+        [
+          "url-02",
+          "ExampleInc"
+        ]
+      ],
+      "fp": [
+        [
+          "fuzzy-09",
+          "FictionalCo"
+        ],
+        [
+          "tricky-02",
+          "PRJ-AURORA"
+        ],
+        [
+          "tricky-04",
+          "FCo"
+        ],
+        [
+          "tricky-06",
+          "Project Aurora"
+        ],
+        [
+          "tricky-09",
+          "Project Aurora"
+        ],
+        [
+          "tricky-09",
+          "Aurora-Zenith"
+        ]
+      ]
+    }
+  },
+  "fuzzy_on": {
+    "accuracy": 0.9873,
+    "f1": 0.9213,
+    "fn": 1,
+    "fp": 6,
+    "precision": 0.8723,
+    "recall": 0.9762,
+    "tn": 502,
+    "tp": 41,
+    "universe": 550
+  },
+  "n_keywords": 10,
+  "n_samples": 55,
+  "universe": 550
+}
