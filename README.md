@@ -18,6 +18,7 @@
 [![pip-audit](https://img.shields.io/badge/pip--audit-0%20vulns-brightgreen)](results/security_scan.md)
 [![Semgrep](https://img.shields.io/badge/semgrep-0%20findings-brightgreen)](results/security_scan.md)
 [![Eval F1](https://img.shields.io/badge/matcher%20F1-0.9213-brightgreen)](results/README.md)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20480454.svg)](https://doi.org/10.5281/zenodo.20480454)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Zenodo](https://img.shields.io/badge/zenodo-DOI%20pending-9cf)](.zenodo.json)
 
