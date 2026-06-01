@@ -7,7 +7,6 @@ pydantic-settings>=2.3.0,<3.0
 python-dotenv>=1.0.0,<2.0
 PyYAML>=6.0.1,<7.0
 rapidfuzz>=3.9.0,<4.0          # modern fuzzywuzzy replacement
-stem>=1.8.2,<2.0               # Tor controller library
 
 # Test
 pytest>=9.0.3,<10.0

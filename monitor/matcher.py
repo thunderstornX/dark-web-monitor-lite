@@ -15,7 +15,7 @@ Design choices
   and the rapidfuzz package is its modern drop-in replacement
   (used by the same author). The default threshold is 85, which is
   the practitioner-folk-default from the original fuzzywuzzy docs.
-* **Sliding window for fuzzy**: the fuzzy phase uses ``partial_ratio``
+* **Sliding window for fuzzy**: the fuzzy phase uses ``fuzz.ratio``
   inside an n-word sliding window so a 3-word watchlist entry like
   "Project Aurora" can be found inside a longer body without the
   full-document Levenshtein distance dragging the score down.
@@ -135,10 +135,11 @@ def _fuzzy_match_score(body: str, keyword: str,
 
     Dual scorer:
 
-    * **Multi-word** keywords (>=2 words) use ``fuzz.partial_ratio``
-      over a word-window of size n_words ± 1. This catches
-      "Project Aurorra" → "Project Aurora" without blowing up on
-      long bodies.
+    * **Multi-word** keywords (>=2 words) use ``fuzz.ratio`` per
+      keyword token against the best-matching atom in a word-window
+      of size n_words ± 1, then min-aggregate across the keyword
+      tokens. This catches "Project Aurorra" → "Project Aurora"
+      without blowing up on long bodies.
     * **Single-word** keywords use ``fuzz.ratio`` (full Levenshtein)
       against each *token* in the body. partial_ratio is too liberal
       for short tokens — it will happily call "Acme" a near-match

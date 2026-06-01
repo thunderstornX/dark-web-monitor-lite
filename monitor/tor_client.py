@@ -1,9 +1,9 @@
 """Tor client probe with graceful fallback.
 
-We do **not** import ``stem`` at module load time. Stem is an
-optional dependency: a deployer might run the matcher entirely
-offline against captured corpora and never need a Tor controller.
-A failure to import or connect should produce a typed
+This release does **not** use the ``stem`` Tor-controller library:
+a deployer might run the matcher entirely offline against captured
+corpora and never need a Tor controller. The reachability probe is
+standard-library only, so a failure to connect produces a typed
 ``TOR_UNAVAILABLE`` status, never a crash.
 
 The probe used here is the simplest one that catches the common

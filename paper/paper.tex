@@ -41,8 +41,9 @@ We describe \texttt{dark-web-monitor-lite}, a small Python tool that
 watches a configurable list of publicly-indexable onion-service URLs
 for matches against a fictitious-by-default keyword watchlist and
 dispatches alerts via Slack, Discord, or generic HTTP webhook. The
-tool is intentionally Tor-aware via the
-\texttt{stem}~\cite{owen2016tor} and \texttt{httpx-socks} libraries
+tool is intentionally Tor-aware: it routes \texttt{.onion} fetches
+through a SOCKS5 proxy via the \texttt{httpx-socks} library and probes
+SOCKS reachability with a lightweight standard-library socket check~\cite{owen2016tor},
 but degrades gracefully when no SOCKS proxy is reachable: every
 fetcher returns a typed \texttt{FetchResult} (\textsc{ok},
 \textsc{http\_error}, \textsc{network\_error},

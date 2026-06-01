@@ -133,8 +133,8 @@ target. Recommendations:
 * The Ahmia indexing service is © Ahmia.fi project; using its
   index URL in `config/sources.yaml` does not imply endorsement
   by Ahmia of this tool.
-* The Tor Project is © The Tor Project, Inc., 3-clause BSD; using
-  the `stem` library does not imply Tor Project endorsement.
+* The Tor Project is © The Tor Project, Inc.; routing fetches through
+  a Tor SOCKS proxy does not imply Tor Project endorsement.
 
 ## Reporting misuse
 

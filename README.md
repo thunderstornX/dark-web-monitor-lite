@@ -25,8 +25,10 @@ tool that watches publicly-indexable onion-service URLs for
 matches against an organisational keyword watchlist and dispatches
 alerts via Slack, Discord, or generic HTTP webhook.
 
-The tool is intentionally Tor-aware via `stem` + `httpx-socks` but
-degrades gracefully when no SOCKS proxy is reachable: every
+The tool is intentionally Tor-aware: it routes `.onion` fetches through a
+SOCKS5 proxy via `httpx-socks` and probes SOCKS reachability with a
+standard-library socket check, but degrades gracefully when no SOCKS proxy
+is reachable: every
 fetcher returns a typed `FetchResult` so the operator sees coverage
 gaps directly in the report.
 
