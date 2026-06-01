@@ -20,8 +20,6 @@
 [![Eval F1](https://img.shields.io/badge/matcher%20F1-0.9213-brightgreen)](results/README.md)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20480454.svg)](https://doi.org/10.5281/zenodo.20480454)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
-[![Zenodo](https://img.shields.io/badge/zenodo-DOI%20pending-9cf)](.zenodo.json)
-
 `dark-web-monitor-lite` is a defensive cyber-threat-intelligence
 tool that watches publicly-indexable onion-service URLs for
 matches against an organisational keyword watchlist and dispatches
