@@ -13,7 +13,7 @@
 > important file in this repository. The licence governs the code;
 > that file governs *how the code is used*.
 
-[![Tests](https://img.shields.io/badge/pytest-59%2F59%20passing-brightgreen)](#testing)
+[![tests](https://github.com/thunderstornX/dark-web-monitor-lite/actions/workflows/tests.yml/badge.svg)](https://github.com/thunderstornX/dark-web-monitor-lite/actions/workflows/tests.yml)
 [![Bandit](https://img.shields.io/badge/bandit-0%20issues-brightgreen)](results/security_scan.md)
 [![pip-audit](https://img.shields.io/badge/pip--audit-0%20vulns-brightgreen)](results/security_scan.md)
 [![Semgrep](https://img.shields.io/badge/semgrep-0%20findings-brightgreen)](results/security_scan.md)
